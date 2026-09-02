@@ -1,0 +1,27 @@
+### Конфигурация на alt-srv1
+```bash
+# /etc/sysconfig/iptables
+*nat
+:PREROUTING ACCEPT [670:61831]
+:INPUT ACCEPT [65:14722]
+:OUTPUT ACCEPT [385:34658]
+:POSTROUTING ACCEPT [386:34710]
+-A POSTROUTING -s 192.168.100.0/24 -o ens33 -j MASQUERADE
+-A POSTROUTING -s 192.168.200.0/24 -o ens33 -j MASQUERADE
+-A POSTROUTING -s 10.10.10.0/24 -o ens33 -j MASQUERADE
+COMMIT
+*filter
+:INPUT ACCEPT [160547:78435507]
+:FORWARD ACCEPT [201323:15059854]
+:OUTPUT ACCEPT [122613:9755197]
+-A INPUT -p tcp -m tcp --dport 25 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 993 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 995 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 110 -j ACCEPT
+-A FORWARD -i ens34 -o ens33 -j ACCEPT
+-A FORWARD -i ens35 -o ens33 -j ACCEPT
+-A FORWARD -i ens36 -o ens33 -j ACCEPT
+-A FORWARD -i ens33 -o ens34 -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -i ens33 -o ens35 -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -i ens33 -o ens36 -m state --state RELATED,ESTABLISHED -j ACCEPT
+COMMIT
