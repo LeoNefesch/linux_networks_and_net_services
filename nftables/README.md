@@ -1,4 +1,4 @@
-## Настройка iptables
+## Настройка nftables
 
 ### Цель
 - На alt-srv3:
@@ -21,7 +21,7 @@ nftables list ruleset
 ```
 
 ### Оглавление
-- iptables:
+- config:
   - [alt-srv3](configs/alt-srv3.md)
 - screenshots:
   - [alt-srv3](screenshots/nftables_22_80_443_ports_srv3.png)
