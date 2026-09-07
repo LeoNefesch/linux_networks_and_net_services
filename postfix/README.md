@@ -4,7 +4,7 @@
 - Настроить пересылку сообщений между altsrv1 и altsrv2.
 
 ### Файлы настроек
-- `etc/dovecot/dovecot.conf`
+- `/etc/dovecot/dovecot.conf`
 - `/etc/postfix/main.cf`
 - `/etc/postfix/master.cf`
 
