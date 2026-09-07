@@ -1,4 +1,4 @@
-### Конфигурация на alt-srv4
+### Конфигурация на alt-srv3
 ```bash
 #!/usr/sbin/nft -f
 
