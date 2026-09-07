@@ -33,3 +33,10 @@ _на примере Alt Linux_
 | alt-srv4 | 10.0.0.14/24 |
 | alt-ws1 | 192.168.100.101/24 (позже static 111/200) |
 | alt-ws2 | 10.0.0.102/24 |
+
+#### Схема стенда в Zabbix
+
+[stend](screenshots/zabbix_stend.png)
+
+#### Настройка Zabbix для мониторинга сети
+[zabbix_settings](zabbix_settings.md)
